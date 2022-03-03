@@ -1,0 +1,3 @@
+alcuni di questi esercizi si trovano anche nelle cartelle equals, compareTo ecc... 
+
+ad esempio, l'esercizio studente è uguale a quello in equals. modifico giusto 2 cosine
