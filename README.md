@@ -1,2 +1,2 @@
-# LP2, Java8
-Esercizi java del corso LP2
+# Esercizi Java8 avanzato
+Esercizi java del corso Linguaggi di Programmazione 2
