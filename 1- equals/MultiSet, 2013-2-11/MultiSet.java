@@ -53,21 +53,11 @@ public class MultiSet<T> implements Iterable<T> { //devi poter fare FOR EACH. se
             }
         }
         return true;
-
-        //volendo, si può anche evitare l'uso dell'iteratore. ecco come:
-        /*
-        for(T t : l){
-            if( !(ml.l.contains(t))  ){
-                return false;
-            }
-            
-        }return true;
-        */
     }
 
 
     @Override
-    public Iterator<T> iterator() { //fallo con una classe anonima, magari.
+    public Iterator<T> iterator() { 
         return l.iterator();
     }
 
