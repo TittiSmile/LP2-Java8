@@ -1,6 +1,6 @@
 package com.company;
 
-//cioè... la traccia mi chiede di trovare la posizione del rettangolo che contiene il cerchio? wtf
+
 
 abstract class Shape{
     public abstract Double width();
