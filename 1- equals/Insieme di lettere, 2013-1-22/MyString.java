@@ -20,7 +20,7 @@ public class MyString {
         return this.sameLetters(m);
     }
 
-    //NON SO COME FARE L'HASHCODE
+   
 
     boolean sameLetters(MyString m){ //serve a controllare se le liste hanno le stesse lettere al loro interno.
         List<Character> lm = new ArrayList<>(); //creo una lista di caratteri per il parametro
