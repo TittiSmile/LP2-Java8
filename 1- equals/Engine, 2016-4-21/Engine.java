@@ -8,7 +8,7 @@ public class Engine {
         this.cavalli=ca;
     }
 
-    public Engine byVolume(){ //metodo ANONIMO (grazie forum, non ci sarei mai arrivata <3)
+    public Engine byVolume(){ 
         return new Engine(cilindrata, cavalli){
             @Override
             public boolean equals(Object obj){
