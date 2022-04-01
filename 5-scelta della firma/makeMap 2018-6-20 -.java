@@ -4,7 +4,7 @@ MakeMap 2018-6-20
 //post-cond: ritorna una mappa che accoppia ogni elemento della prima lista alla seconda lista
 //ESEMPIO: l1= 1,2,3	l2=5,9,3	Map(K,V)={1=5, 2=9, 3=3}
 
-/* Possibile implementazione
+//Possibile implementazione
 
     <K,V> Map<K,V> makeMap(List<K> keys, List<V> vals){
         Map<K,V> m = new HashMap<>();   //creo una nuova mappa. 
@@ -43,7 +43,6 @@ MakeMap 2018-6-20
         map=m.makeMap(k, v);
         System.out.println(map);
     }
-*/
 
 
 
