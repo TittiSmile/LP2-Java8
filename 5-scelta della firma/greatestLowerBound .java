@@ -3,7 +3,7 @@
 			 //(nell'esempio prende degli insiemi di ugual dimensione)
 //ESEMPIO: a={5,20,30} b={25,26,30}	ritorno=20
 
-/*	POSSIBILE IMPLEMENTAZIONE 
+	//POSSIBILE IMPLEMENTAZIONE 
     <T> T gLB(Set<T> a, Set<T> b, Comparator<T> c){
         List<T> la = new ArrayList<>(a);
         List<T> lb = new ArrayList<>(b);
@@ -18,8 +18,6 @@
         }
         return maxA;
     }
-
-*/
 
 																						
 
