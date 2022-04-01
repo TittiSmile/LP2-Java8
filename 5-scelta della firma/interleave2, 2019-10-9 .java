@@ -1,5 +1,7 @@
 //pre: prende come argomento tre liste A B C (qualsiasi)
 //post: senza modificare A e B, aggiunge tutti gli elementi di A e B in C in modo alternato
+
+//possibile implementazione:
     <S> void interleave(List<S> a, List<S> b, List<S> c){
         Iterator<S> itA = a.iterator();
         Iterator<S> itB = b.iterator();
@@ -11,8 +13,6 @@
         //System.out.println(c);
 
     }
-
-
 
 
 
