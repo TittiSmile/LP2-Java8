@@ -45,19 +45,7 @@ ritorno:		come sopra. posso fare tranquillamente la add perchè sto aggiungendo 
 
 
 
- <K, T extends K> Collection<T> foo(Iterable<T> i, Map<K,?> map){
-        Set<T> setK = new HashSet<>();
-        Iterator<T> it = i.iterator();
-        Iterator<K> itM = map.keySet().iterator();
-        while(it.hasNext() && itM.hasNext()){
-            T itn = it.next();
-            K itMn = itM.next();
-            if(itn.equals(itMn)){
-                setK.add(itn);
-            }
-        }
-        return setK;
-    }
+
 */
 
 c) <K,V> Set<K> foo(Iterable<? extends K> i, Map<K,V> map)
@@ -92,23 +80,7 @@ semplicità:		1 param
 ritorno:		come collezione, un po' più restrittivo di collection.
 
 
-migliore perchè: anche la b era buona e molto simile PERò era meno semplice (cioè aveva 1 parametro in più). di conseguenza
-				 arrivati a questo punto, bisogna scegliere la firma che è più semplice. RICORDA che i criteri sono messi
-				 in ordine di "importanza"
 
-<K> Set<K> foo(Iterable<? extends K> i, Map<?,?> map){
-        Set<K> setK = new HashSet<>();
-        Iterator<? extends K> it = i.iterator();
-        Iterator<?> itM = map.keySet().iterator();
-        while(it.hasNext() && itM.hasNext()){
-            K itn = it.next();
-            Object itMn = itM.next();
-            if(itn.equals(itMn)){
-                setK.add(itn);
-            }
-        }
-        return setK;
-    }
 */
 
 f) <K> Set<K> foo(Iterable<? super K> i, Map<? extends K,?> map)
@@ -124,21 +96,6 @@ ritorno:		più restrittivo di collection ma va bene
 
 
 
- <K> Set<K> foo(Iterable<? super K>i, Map<? extends K,?> map){
-        Set<K> setK = new HashSet<>();
-        Iterator<? super K> it = i.iterator();
-        Iterator<? extends K> itM = map.keySet().iterator();
-        while(it.hasNext() && itM.hasNext()){
-            Object itn = it.next();
-            K itMn = itM.next();
-            if(itn.equals(itMn)){
-                setK.add(itMn); //tanto arrivati a questo punto sono dichiarati come uguali. quindi metto quello col tipo di 
-                					ritorno concorde
-            }
-        }
-
-        return setK;
-    }
 */
 
 

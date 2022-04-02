@@ -29,17 +29,7 @@ public class Curriculum {
         }
 
         Job next(){
-            /*dà ECCEZIONE.
-            int index = 0;
-            Iterator<Job> it = listJob.iterator();
-            if(index<(listJob.size())-1){
-                index++;
-                return listJob.get(listJob.indexOf(this)+1);
-            }
 
-            return null;*/
-
-            //grazie webbe
             try{
 
                 return listJob.get(listJob.indexOf(this)+1) ;
@@ -47,14 +37,7 @@ public class Curriculum {
             }catch(IndexOutOfBoundsException e){
                 return null;
             }
-            //forse andrebbe un iteratore.. qualcosa del genere:
-            /* Iterator<Job> it = jobSet.iterator();
-            while(it.hasNext()){
-                return it.next();
-            }
-            return null;
-            
-            NON FUNZIONA, sob*/
+
         }
 
         @Override

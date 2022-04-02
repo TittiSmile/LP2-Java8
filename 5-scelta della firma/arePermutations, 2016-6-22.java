@@ -22,14 +22,6 @@ garanzie:		non scrivo sulle liste (leggo al più object)
 semplicità: 	0 param
 tipo ritorno:	banale
 
-     boolean arePermutations(List<?> a, List<?> b){
-        Set<?> s = new HashSet<>(a);		//è legittimo? di che tipo è il set? in realtà puoi sostituirlo con object. 
-        Set<?> s2 = new HashSet<>(b);
-        if(s.equals(s2)){
-            return true;
-        }
-        return false;
-    }
 
 */
 
@@ -62,14 +54,6 @@ garanzie:		no scrittura sulla lista
 semplicità: 	1 param
 tipo ritorno:	banale
 
-     <S> boolean arePermutations(List<? extends S> a, List<? extends S> b){
-        Set<S> s = new HashSet<>(a); //posso inserire dei manager in un set di employee
-        Set<S> s2 = new HashSet<>(b);
-        if(s.equals(s2)){
-            return true;
-        }
-        return false;
-    }
 */
 
 e) boolean arePermutations(List<Object> a, List<Object> b)

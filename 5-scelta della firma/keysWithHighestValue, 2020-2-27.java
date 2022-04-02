@@ -53,11 +53,7 @@ ritorno:
 
 d) <V> Set<Object> keysWithHighestValue(Map<?,? extends V> map, Comparator<? super V> c) //MIGLIORE 
 /*
-funzionalità:	sì. anche se sembrava no, questa firma funziona e forse è pure una delle migliori (con le giuste modifiche).
-				partiamo dal set che deve concordare con K della mappa. il ? vuol dire che va bene QUALUNQUE tipo. di conseguenza,
-				in un set di object posso metterci di tutto: integer, employee, student eccc...
-				per quanto riguarda i valori, invece, va comunque bene. questo perchè il comparatore è sempre su ? super V. e anche se
-				passo un oggetto della sottoclasse, il comparatore sarà della superclasse quindi non c'è nessun problema.  
+funzionalità:	sì. 
 completezza:	sì, posso prendere di tutto
 correttezza:	sì
 semplicità:		1 parametro
@@ -96,12 +92,6 @@ ritorno:
     }
 
 //dà ulteriori garanzie e risulta essere completa. 
-
-//ATTENZIONE!!!! nella firma d, se avessi voluto lasciare ? alla K della mappa, dovevo comunque modificare il tipo di ritorno esempio:
- <K,V> Set<K> keysWithHighestValue(Map<?,? extends V> map, Comparator<? super V> c)  //ERRORE!!!!!
- //questo perchè ? e K possono NON concordare. nel caso della firma d, ? può essere visto come object ma, in più,
- // per qualunque sia ? posso comunque metterlo in un set di object (che contiene di tutto)
-
 
 
 

@@ -39,11 +39,7 @@ tipo di ritorno: banale
 b) void splitList (List<Object> src, Object x, List<?> part1, List<?> part2)
 /*
 funzionalità: no. senza neanche vedere l'implementazione: non posso inserire un oggetto in una lista, ad esempio, di integer.
-			  vedendo l'implementazione, invece, dovrei usare un comparatore di object  e non mi sembra il caso D: 
-              cioè, il confronto tra x e il corrente elemento di src è possibile. il problema è l'add sulle due liste che, essendo
-              di tipo ?, non si può fare scrittura.
-              in questo caso è NO perchè, anche se list ? può essere scritto come object, qui abbiamo già le liste passate come
-              parametri del metodo. quindi NON posso riscriverle come object.
+			 
 completezza:
 correttezza:
 garanzie:

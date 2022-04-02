@@ -7,8 +7,7 @@ FindPrevious, 2019-1-23
 
 
 /* 	POSSIBILE IMPLEMENTAZIONE (caso base T)
-la post condizione mi dice questo: trova il più grande elemento dell'insieme che è più piccolo di x.
-quindi, fissato x, devo trovare l'elemento che viene subito prima di x.
+
 
 <T> T findPrevious(Set<T> set, Comparator<T> comp, T x){
         List<T> l = new ArrayList<>(set);
@@ -24,14 +23,6 @@ quindi, fissato x, devo trovare l'elemento che viene subito prima di x.
     }
 
 
-//dichiaro anche il comparatore
-class CompareObjects <T extends Comparable<T>> implements Comparator<T> {
-    
-    @Override
-    public int compare(T a, T b){
-        return a.compareTo(b);
-    }
-}
 
 */
 
@@ -101,22 +92,6 @@ correttezza:
 garanzie:	
 semplicità:	
 tipo ritorno:
-
-POSSIBILE IMPLEMENTAZIONE
-    <T> T findPrevious(Set<? super T> set, Comparator<T> comp, T x){
-        List<Object> l = new ArrayList<>(set);
-        l.add(x);
-        Collections.sort(l, comp);	//arrivano già qui i problemi. perchè sort va a comparare secondo lo stesso tipo. la lista
-        							//è di object mentre il comparatore è su T. non va bene.
-        int a =  l.indexOf(x)-1;
-        for(Object t : l){
-            if( comp.compare(t, x) < 0 ){
-                 return l.get(a);
-             }
-        }
-        return null;
-    }
-
 
 
 */

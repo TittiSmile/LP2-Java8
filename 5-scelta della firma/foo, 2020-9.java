@@ -46,18 +46,6 @@ ritorno:		perdiamo informazioni sul tipo. non posso richiamare il metodo.
 
 
 
-<T> Set<? extends T> foo(Set<? extends T> a, Set<? extends T> b, Set<? extends T> c){
-        Set<? extends T> newSet = new HashSet<>(); //se lo dichiari così la add NON funziona. 
-        Set<T> newSet = new HashSet<>(); //così si può ovviare il problema MA comunque il tipo di ritorno non ci piace
-
-        for(T t : a){   //suppongo che siano liste della stessa dimensione o qualcosa del genere.
-            if(b.contains(t) && !(c.contains(t))){
-                newSet.add(t);
-            }
-        }
-        return newSet;
-    }
-
 
 
 */
@@ -83,19 +71,6 @@ ritorno:		perdiamo informazione sul tipo. possiamo assegnare al metodo solo obj
 
 
 
-
-    <T> Set<?> foo(Set<T> a, Set<T> b, Set<T> c){
-        Set<Object> newSet = new HashSet<>(); //se dichiaro il set come obj ci permetterà di fare la scrittura
-        									// MA COMUNQUE il ritorno è fallace e non ci piace. possiamo richiamarlo 
-        									//solo con obj
-
-        for(T t : a){   
-            if(b.contains(t) && !(c.contains(t))){
-                newSet.add(t);
-            }
-        }
-        return newSet;
-    }
 
 
 

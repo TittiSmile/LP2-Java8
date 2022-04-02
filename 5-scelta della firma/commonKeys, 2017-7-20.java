@@ -49,17 +49,6 @@ semplicità: 	0 param
 tipo ritorno:	un po' troppo specifico. siamo obbligati a far ritornare un set di object.
 
 
-    Set<Object> commonKeys(Map<?,?> m1, Map<?,?> m2){
-        Set<?> s = m1.keySet();        //assegnamento valido 
-        Set<?> s2 = m2.keySet();        
-        Set<Object> s3 = new HashSet<>();   
-        for(Object t : s){                  
-            if(s2.contains(t)){         
-                s3.add(t);              
-            }
-        }
-        return s3;
-
 
 */
 

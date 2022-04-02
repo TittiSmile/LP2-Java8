@@ -20,17 +20,7 @@ public class BoundedMap<T,S> {
             map.put(t,s);
         }
         else {
-            /*int max=findMaxValueMap(mapCountOccurrences);
-            T x=null;
-            for(Map.Entry<T,Integer> entry:mapCountOccurrences.entrySet()){
-                if(entry.getValue().equals(max)){
-                    x=entry.getKey();
-                }
-            }
-            map.remove(x);
-            map.put(t,s);*/
-            //System.out.println("rrrrrrrrrr");
-
+        
             int min = findMinValueMap(mapCountOccurrences);
             T x=null;
             for(Map.Entry<T,Integer> entry:mapCountOccurrences.entrySet()){

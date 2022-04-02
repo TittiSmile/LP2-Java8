@@ -43,23 +43,6 @@ tipo ritorno:	troppo generico (obj prende tutto).
                 un tipo di ritorno ideale ptrebbe essere S. questo perchè deve essere dello stesso tipo del set a
 */
 
-/*  ESEMPIO DI IMPLEMENTAZIONE
-   <S,T> Object gLB(Set<S> a, Set<T> b, Comparator<Object> c){
-        List<S> la = new ArrayList<>(a);
-        List<T> lb = new ArrayList<>(b);
-        Collections.sort(la, c);
-        Collections.sort(lb, c);
-        T minListB = lb.get(0);
-        S max = null;
-        for(S t : la){
-            if(c.compare(t, minListB) < 0 ){
-                    max=t;
-            }
-        }
-        return max;
-    }	
-*/
-
 
 c) <T> T gLB(Set<T> a, Set<T> b, Comparator<? super T> c)			
 /*
@@ -103,35 +86,10 @@ tipo ritorno:
 
 
 
-/*	ESEMPIO DI IMPLEMENTAZIONE
-    <T> T gLB(Set<? super T> a, Set<? super T> b, Comparator<T> c){
-        List<Object> la = new ArrayList<>(a);	//da notare che ? super viene trasformato in Object. 
-        List<Object> lb = new ArrayList<>(b);
-        Collections.sort(la, c);		//ci sono problemi già con la sort di collection.
-        Collections.sort(lb, c);
-        Object minListB = lb.get(0);
-        Object max = null;
-        for(Object t : la){
-            if(c.compare(t, minListB) < 0 ){
-                    max=t;
-            }
-        }
-        return max;
-    }	
-
-
-*/
-
 
 //firma migliore secondo me (simile alla d):
 <T>T gLB(Set<? extends T> a, Set<? extends T> b, Comparator<? super T> c)
 //ci dà più garanzie sul comparatore (lettura di object) e ci dà più scelta sul tipo dei set.
-
-/*	
-*/
-
-
-
 
 
 
@@ -164,9 +122,3 @@ tipo ritorno:
 */
 
 
-/*
-
-
-
-
-*/

@@ -16,8 +16,7 @@ public class Song {
     }
 
     @Override
-    public boolean equals(Object obj){ //lo faccio perchè così, nel remove, ho più facilità ad eliminare una song.
-        //due song sono UGUALI se hanno stesso nome e stessa durata.
+    public boolean equals(Object obj){ 
         if(obj==null)
             return false;
         if(this.getClass()!=obj.getClass())

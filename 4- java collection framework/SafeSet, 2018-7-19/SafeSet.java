@@ -22,7 +22,7 @@ public class SafeSet<T> {
     //2) Il metodo remove rimuove un elemento dall'insieme, ma la
     //rimozione è definitiva solo dopo una seconda chiamata
 
-    //DUBBIO: in che caso remove ritorna false? torna sempre true? torna false se il tale elemento non esiste.
+ 
     boolean remove(T t){
         if(s.contains(t)){
             if(contCallFunz==0){ //se il contatore delle chiamate di remove è 0 (quindi non è mai stato chiamato)...

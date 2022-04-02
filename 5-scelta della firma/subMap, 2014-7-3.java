@@ -18,31 +18,13 @@ public class myClass {
 a) <K> Map<K,?> subMap(Map<K,?> m, Collection<K> c)
 /*
 funzionalità: Sì. argomentiamo:
-              per come ho svolto l'implementazione, si ha difficoltà ad eseguire il metodo put sulla nuova mappa. ? non dà 
-			  la possibilità di scrivere. quindi non è funzionale. E INVECE!!!
-              è funzionale perchè ? può essere sostituito come Object tranquillamente. in questo modo si "ovvia" al problema della
-              scrittura (quindi funzionalità). però il problema resta sempre col tipo di ritorno. 
+              
 completezza: no. la collezione è vincolata da K.
 correttezza: sì
 garanzie:    no scrittura su value di map
 semplicità:  1 param
 tipo du ritorno: un po' inutile per il chiamante. si perde info. 
 
-public class myClass {
-    <K,V> Map<?,?> subMap(Map<K,?> m, Collection<K> c){
-        Map<Object,Object> map = new HashMap<>(); //mettendo 2 object al posto di ? il problema è risolto
-        for(Map.Entry<K,?> entry : m.entrySet()){ //qui resta ? perchè è in lettura sulla mappa. 
-            if(c.contains(entry.getKey())){
-                map.put(entry.getKey(), entry.getValue()); //con 2 obj la scrittura è possibile. MA COME? posso inserire un
-                                                           oggetto di tipo K in un object????????
-                                                           SI. di base, in una mappa (o collezione) di tipo <Object> puoi ficcarci
-                                                           dentro tutto quello che vuoi. object è il supertipo comune a tutti i 
-                                                           tipi. (rivedi il paragrafo su assegnabilità vs contenimento)
-            }
-        }
-        return map;
-    }
-}
 
 
 

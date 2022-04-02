@@ -17,21 +17,9 @@ MakeMap 2018-6-20
             m.put(keys.get(i), vals.get(i));    //poi aggiungo entrambi i valori. 
         }
         return m;
-
-        //piccola postilla. per il FOR meglio usare un ITERATORE esplicito. questo perchè se le liste sono di tipo LL
-        //il tempo di scorrimento diventa quadratico. dovrò provare a fare un'implementazione del genere...
-
-        //********************ITERATORE ESPLICITO?
-                            //int i =0;
-                            //Iterator<K> it = keys.iterator();
-                            //while(it.hasNext() ){
-                               // K listK = it.next();
-                               // V listV = vals.get(i);
-                               // m.put(listK, listV);
-                               // i++;
-                            }
+        }
                             
-    }
+    
 
     public static void main(String[] args) {
         List<Integer> k = new ArrayList<>();
@@ -58,24 +46,7 @@ semplicità:    2 param
 tipo ritorno:   inutile per il chiamante.    è generico per il chiamante.  l'inutilità per il chiamante NON intacca la funz.
 */
 
-/*esempio di implementazione 
-<K,V> Map<? extends K,? extends V> makeMap(List<K> keys, List<V> vals){
-        Map<K,V> m = new HashMap<>();   //per quel tipo di ritorno, non c'è problema a dichiarare così la mappa.
-                                        //K e V sono il sottotipo di loro stessi. sono compresi nel ? extends
 
-        if(keys.size() != vals.size() ){
-            throw new IllegalArgumentException("liste di dimensioni diverse");
-        }
-        
-        for(int i=0; i<keys.size(); i++){
-            m.put(keys.get(i), vals.get(i));
-        }
-        return m;
-    }
-
-    //il problema sarà quando farò nel main: 
-    map=m.makeMap(k, v); //si perde l'informazione sul tipo di ritorno
-*/
 
 
 
@@ -94,25 +65,6 @@ la funzionalità risponde alla domanda: è possibile fare questo metodo con quel
 una mappa per questa firma. in realtà non è così. puoi farlo. è funzionale 
 */
 
-/* esempio di impleemntazione 
- <K,V> Map<? extends K,?> makeMap(List<K> keys, List<?> vals){
-        Map<K,Object> m = new HashMap<>();   //creo una nuova mappa. 
-
-        if(keys.size() != vals.size() ){    
-            throw new IllegalArgumentException("liste di dimensioni diverse"); 
-        }
-        
-        for(int i=0; i<keys.size(); i++){  
-            m.put(keys.get(i), vals.get(i));    
-        }
-        return m;
-
-1-posso creare una mappa di k, obj? sì
-2- posso scorrere una lista di ? (se sì con quale parametro)? sì con obj
-3- posso fare la put con k e obj? sì, non c'è problema
-*/
-
-
 
 
 c) <K,V> Map<K,V> makeMap(List<K> keys, List<?> vals)
@@ -130,22 +82,17 @@ tipo ritorno:
 d) <T> Map<T,T> makeMap(List<? extends T> keys, List<? extends T> vals)
 /*
 funzionalità:  sì
-completezza:   sì.ATTENZIONE ai controesempi!!!! chiaramente, se specifichi il T che ti fa comodo, non troverai mai il controesempio giusto
-               ma se al posto di T=emp usassi T=object? vedresti che c'è completezza. puoi prendere qualunque lista.     
+completezza:   sì.   
 correttezza:   sì
 garanzie:      non posso scrivere sulle due liste.
 semplicità:    1 param.
-tipo ritorno:  valore per T troppo generico. o meglio. nel caso in cui T=obj posso limitarmi a restituire solo delle liste di obj.
-                costringe un T generico. il tipo di ritorno è ok ma T è generico. se chiave e valore non sono imparentate, sono 
-                costretta  mettere obj come T 
+tipo ritorno:  valore per T troppo generico. 
 */
 
 e) <K> Map<K,?> makeMap(List<K> keys, List<Object> vals)
 /*
 funzionalità sì.
-completezza  no. la lista di obj mi limita a passare una lista di object :D non posso passarci una lista di emp o di string.
-             sono limitata ad obj.se vuoi riutilizare vals devi ridefinire una lista con un altro tipo e questa cosa non ha 
-             molto senso
+completezza  no. 
 correttezza   sì
 garanzie      
 semplicità    
@@ -157,12 +104,7 @@ tipo ritorno  ? è restrittivo per il chiamante quindi ci sono problemi quando s
 f) <K, V extends K> Map<K,V> makeMap(List<K> keys, List<V> vals)
 /*
 funzionalità  sì
-completezza   no. immagina questo: la pre-cond dice di poter prendere due liste qualsiasi. quindi, se passassi una lista di emp
-              e una lista di string, posso farlo con questa firma?
-              NO. questo perchè, da come sono specificati K e V, V deve essere necessariamente sottoclasse di K ma abbiamo trovato
-              un esempio dove questo non è possibile.
-              completezza vuol dire: non riesco a passare tutto quello che vorrei. ma le cose che riesco a passare hanno un tipo di ritorno
-              giusto? conserva le infor che ho passato?
+completezza   no. 
 correttezza   sì
 garanzie      nessuna
 semplicità    2 param

@@ -8,22 +8,6 @@ public class Student {
         this.matricola=matricola;
     }
 
-    //b)
-   /* @Override
-    public boolean equals(Object obj){
-        if(obj==null)
-            return false;
-        if(this.getClass()!=obj.getClass())
-            return false;
-        Student s = (Student) obj;
-        if(checkDispari(matricola)==checkDispari(s.matricola))
-            return true;
-        if(checkPari(matricola)==checkPari(s.matricola))
-            return true;
-        return false;
-    }*/
-
-   //d)
    @Override
    public boolean equals(Object obj){
        if(obj==null)

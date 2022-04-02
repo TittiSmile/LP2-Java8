@@ -10,9 +10,7 @@ public class Radio implements Iterable<Radio.Channel> {
     public Channel addChannel(String n, Double f){
         Channel c = new Channel(n,f);
         for(Channel i : setChannel){
-            if(i.frequenzaStazione.equals(c.frequenzaStazione)){ //nel set NON ci sono duplicati, vero. ma possiamo avere 2 stazioni con nomi
-                                                                // diversi e frequenze uguali. quello non va bene. quindi se c'è un uguaglianza tra
-                                                                //f passato e una frequenza già presente, si lancia eccezione.
+            if(i.frequenzaStazione.equals(c.frequenzaStazione)){ 
 
                 throw new IllegalArgumentException("errore");
             }

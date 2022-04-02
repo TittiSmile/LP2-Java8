@@ -39,23 +39,6 @@ ritorno: 		giusto. è concorde con la prima collezione. (chiaramente non posso r
 
 
 
-<S> Set<S> disjoin(Collection<? extends S> a, Collection<?> b) {
-        Set<S> newSet = new HashSet<>();
-        Iterator<? extends S> it = a.iterator();
-        Iterator<?> it2 = b.iterator();
-
-        while(it.hasNext() && it2.hasNext()){ 
-            S sa = it.next();
-            Object sb = it2.next(); //object perchè il supertipo
-            if(a.contains(sb) && b.contains(sa)){ 
-                it.remove();                    
-                it2.remove();
-                newSet.add(sa);                 
-            }
-        }
-        return newSet;
-    }
-
 */
 
 c) <S,T> Set<? super S> disjoin(Collection<S> a, Collection<T> b)
@@ -88,22 +71,6 @@ garanzie:
 semplicità:
 ritorno: 
 
-<S> Set<S> disjoin(Collection<? super S> a, Collection<? super S> b){
-        Set<S> newSet = new HashSet<>();
-        Iterator<? super S> it = a.iterator();
-        Iterator<? super S> it2 = b.iterator();
-
-        while(it.hasNext() && it2.hasNext()){ 
-            Object sa = it.next(); //di tipo object perchè sono i supertipi.
-            Object sb = it2.next(); 
-            if(a.contains(sb) && b.contains(sa)){
-                it.remove();                    
-                it2.remove();
-                newSet.add(sa);                 //ERRORE. questo perchè sa potrebbe essere un oggetto della superclasse di S
-            }
-        }
-        return newSet;
-    }
 */
 
 

@@ -1,7 +1,6 @@
 package com.company;
 import java.util.*;
 
-//ATTENZIONE!!! non ho fatto  la throws perchè c'è sempre almeno 1 maronno che si trova nell'intervallo. per il resto, funziona
 
 
 public class Room {

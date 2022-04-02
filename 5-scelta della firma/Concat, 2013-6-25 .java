@@ -2,7 +2,6 @@ Concat, 2013-6-25
 
 //pre-cond:	 accetta due iteratori generici
 //post-cond: ritorna un nuovo iteratore che ritorna tutti gli elementi di a e b (prima l'uno poi l'altro)
-//FATTO CON IL PROF A RICEVIMENTO
 
 <T> Iterator<T> concat(Iterator<? extends T> a, Iterator<? extends T> b){
         return new Iterator<T>() { //ritorno un nuovo iteratore. chiaramente devo sovrascrivere i suoi metodi. 
@@ -44,11 +43,6 @@ garanzie:		//limitato. no garanzie. leggo solo sottoforma di object
 semplicità:		0 param
 tipo ritorno:	troppo generico //ci posso assegnare SOLO object
 
-DUBBIO: tecnicamente posso avere iteratori di qualunque tipo... se a e b fossero integer e 
-		string come si fa? non so se è funzionale.
-		non viene garantito lo stesso tipo per ogni iteratore.
-		penso, probabilmente, che se sono di tipi diversi, ritorna null.
-		? è visto come object (al ritorno). se prendo due iteratori di tipo qualsiasi mi ritorna iteratore di object.
 */
 
 c) <S> Iterator<S> concat(Iterator<S> a, Iterator<S> b)
@@ -70,10 +64,6 @@ garanzie:		l'iteratore di suo non permette di scrivere
 semplicità:		1 param
 tipo ritorno:	coerente 
 
-DUBBIO:  se S=employee posso passare un manager agli iteratori però deve tornare un employe...
-
-non è un problema. vedi esempio d es 3 lug 2021.
-in un iteratore (o lista, collezione, quel che vuoi) di S possono starci i sottotipi di S SENZA PROBLEMA
 
 */
 

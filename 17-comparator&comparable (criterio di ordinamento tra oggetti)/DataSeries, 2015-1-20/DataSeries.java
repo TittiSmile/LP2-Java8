@@ -2,7 +2,7 @@ package com.company;
 import javax.xml.crypto.Data;
 import java.util.*;
 
-//NON sono sicura della correttezza. non mi convince. una soluzione sta sul forum.
+
 
 public class DataSeries implements Comparator<DataSeries>{
     Map<Integer, Double> m = new HashMap<>();

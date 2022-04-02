@@ -14,9 +14,6 @@ public class Main {
         System.out.println(q.getBestAnswer());
 
 
-        //non mi convince molto perchè mi ritorna NON solo la risposta ma anche la sua domanda associata. però yolo, funziona
-        //forse andava fatto una lista di riferimento in question
-
         //System.out.println(a1.f());
 
     }

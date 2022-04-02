@@ -31,15 +31,7 @@ tipo di ritorno: si perde il tipo di informazione. inutile per il chiamante.
 
 
 
-List<?> listIntersection (List<?> l, Set<?> s){
-        List<Object> l2 = new LinkedList<>();
-        for(Object t : l){
-            if(s.contains(t)){
-                l2.add(t);
-            }
-        }
-        return l2;
-    }
+
 */
 
 

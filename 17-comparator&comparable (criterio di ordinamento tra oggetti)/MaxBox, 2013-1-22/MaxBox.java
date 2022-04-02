@@ -4,7 +4,6 @@ import java.util.*;
 public class MaxBox<T> {
     private SortedSet<T> setObject;
     MaxBox(){
-        //non so come fare a vedere se una classe implementa un'interfaccia. penso c'entri qualcosa la riflessione.
         setObject=new TreeSet<>();
     }
     MaxBox(Comparator<T> comp){

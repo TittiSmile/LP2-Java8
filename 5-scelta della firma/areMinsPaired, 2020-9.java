@@ -2,14 +2,6 @@
 //post: ritorna true se la chiave minima (cioè la più  piccola tra le chiavi) è associata al valore minimo
 
 
-
-/*chiaramente, il comparatore deve confrontare chiavi e valori. di conseguenza, K e V devono essere come minimo imparentati 
-(quindi ? extends) e in più il comparatore deve essere dello stesso tipo di K e V considerando il ? super come migliore intestazione
-per il tipo. di conseguenza, questa qui è la migliore intestazione.
-la dichiarazione degli oggetti è fatta con ? extends T. totalmente legittimo
-può andare bene anche: 	
-	boolean areMinsPaired(Map<T,T> m, Comparator<T> comp)
-però è limitante e non ci dice nulla sulla completezza*/
  public class MyClass {
 
     <T> boolean areMinsPaired(Map<? extends T,? extends T> m, Comparator<? super T> comp){

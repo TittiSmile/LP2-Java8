@@ -50,12 +50,6 @@ tipo ritorno:
 
 
 
-/*class mapComparator<T extends Comparable<T>> implements Comparator<T>{
-    @Override
-    public int compare(T a, T b){ //prova con emp. passagli un manager nel main. 
-        return a.compareTo(b);
-    }
-}*/
 
 
 

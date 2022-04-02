@@ -9,7 +9,7 @@ public class Studente2 {
         this.matricola=m;
     }
 
-    static class Triennale2 extends Studente2{   //perchè classe interna? semplicemente, nel caso d'uso c'è la dicitura: "Studente.Triennale(..)"
+    static class Triennale2 extends Studente2{   
         static String p = null;
         Triennale2(String name, int mat){
             super(name, mat);

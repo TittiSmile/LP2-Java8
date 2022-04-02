@@ -16,14 +16,6 @@ FindndNext, 2017-6-21
     }
 
 
-//dichiaro anche il comparatore
-class CompareObjects <T extends Comparable<T>> implements Comparator<T> {
-    
-    @Override
-    public int compare(T a, T b){
-        return a.compareTo(b);
-    }
-}
 */
 
 
@@ -111,61 +103,6 @@ tipo ritorno:
 */
 
 
-    
-
-/*	IMPLEMENTAZIONE SPIEGATA. (usando il tipo T generico)
-
-import java.util.*;
-public class Main
-{
-    <T extends Comparable<T>> T FindNext(Set<T> set, Comparator<T> comp, T x){ //T estende comparable perchè deve trovare massimo/minimo.
-        ArrayList<T> l = new ArrayList<>(set); //mi appoggio ad una lista...
-        Collections.sort(l, comp);				//... così posso chiamare il comparatore facendo il sort
-        
-        for(int i = 0; i< l.size(); i++){		//ciclo sulla lista.
-            if(comp.compare(l.get(i), x) < 0) {	//se l'oggetto i è più piccolo di x...
-                return l.get(i);				//allora abbiamo trovato quello giusto
-            } 
-        }
-        
-        //IN ALTERNATIVA AL FOR DI SOPRA: (funziona alla stessa maniera)
-        // for(T t : l){
-          //  if(comp.compare(t, x) < 0){
-            //    return t;
-           // }
-       // }
-
-
-        
-        return null;						//altrimenti ritorna null a prescindere.
-        
-    }
-	public static void main(String[] args) {
-		System.out.println("Hello World");
-		CompareObjects<Integer> co = new CompareObjects<>();	//è una classe che implementa un comparator -> è un comparatore
-		
-		Main m = new Main();
-		Set<Integer> s = new HashSet<>(); 		//creo il set ed aggiungo elementi
-		s.add(5);s.add(10);s.add(7);s.add(2);
-		Integer x = 6;
-		System.out.print(m.FindNext(s, co, x));		//chiamo la funzione. 
-		
-
-	}
-}
-
-class CompareObjects <T extends Comparable<T>> implements Comparator<T> { //è un comparatore custom in ordine crescente. 
-																	//anche qui t estende comprable di se stesso per poter usare compareTo
-    
-    @Override
-    public int compare(T a, T b){
-        return a.compareTo(b);
-    }
-}
-
-
-
-*/
-
+ 
 
 
